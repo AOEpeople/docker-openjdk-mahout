@@ -1,6 +1,8 @@
-FROM openjdk:latest
+FROM openjdk:alpine
 
 USER root
+
+RUN apk add --no-cache bash
 
 ENV MAHOUT_VERSION 0.13.0
 ENV HADOOP_VERSION 2.7.3
