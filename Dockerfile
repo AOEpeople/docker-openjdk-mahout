@@ -11,6 +11,7 @@ ENV JAVA_HOME /usr
 
 WORKDIR /tmp
 
+RUN apt-get update && apt-get install -y wget
 RUN wget --no-verbose "http://archive.apache.org/dist/mahout/${MAHOUT_VERSION}/apache-mahout-distribution-${MAHOUT_VERSION}.tar.gz" && tar -xzf "apache-mahout-distribution-${MAHOUT_VERSION}.tar.gz" && rm "apache-mahout-distribution-${MAHOUT_VERSION}.tar.gz" && mv "apache-mahout-distribution-${MAHOUT_VERSION}" ${MAHOUT_HOME}
 RUN wget --no-verbose "http://archive.apache.org/dist/hadoop/core/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz" && tar -xzf "hadoop-${HADOOP_VERSION}.tar.gz" && rm "hadoop-${HADOOP_VERSION}.tar.gz" && mv "hadoop-${HADOOP_VERSION}" ${HADOOP_HOME}
 
